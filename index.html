@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CTS: The Command Center for Roll-Off Operations | Dumpster Management Software</title>
+    
+    <!-- Bootstrap 5 CSS CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Custom Styles -->
+    <style>
+        body { font-family: 'Inter', sans-serif; background-color: #f8f9fa; }
+        html { scroll-behavior: smooth; }
+        .bg-primary-dark { background-color: #1d4ed8 !important; } /* Custom deep blue */
+        .text-primary-dark { color: #1d4ed8 !important; }
+        .shadow-sm-hover:hover { box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important; transform: translateY(-3px); transition: all 0.3s ease; }
+        .cta-gradient { background-image: linear-gradient(to right, #1d4ed8, #3b82f6); border: none; }
+        .feature-icon { width: 3rem; height: 3rem; }
+    </style>
+
+    <!-- Single Page Level SEO Meta Data -->
+    <meta name="description" content="CTS is the all-in-one software solution for roll-off dumpster companies. Automate routing, track containers in real-time, and seamlessly sync financials with QuickBooks.">
+    <meta name="keywords" content="roll-off software, dumpster management system, container tracking, route optimization, waste management software, quickbooks integration for haulers">
+    <meta name="author" content="SISCOTEK">
+
+    <!-- Open Graph (OG) / Facebook -->
+    <meta property="og:title" content="CTS: The Command Center for Roll-Off Operations">
+    <meta property="og:description" content="The all-in-one software that maximizes profit per route and ensures real-time asset visibility for your roll-off business.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="[Your Website URL Here]">
+    <!-- <meta property="og:image" content="https://www.istockphoto.com/photos/software-dashboard"> -->
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@[YourTwitterHandle]">
+    <meta name="twitter:creator" content="@[YourTwitterHandle]">
+    <meta name="twitter:title" content="CTS: Command Center for Roll-Off">
+    <meta name="twitter:description" content="Automate routing, track containers, and integrate billing with QuickBooks using CTS.">
+    
+    <!-- Schema Markup (Organization and SoftwareApplication) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Organization",
+          "name": "SISCOTEK",
+          "url": "[Your Website URL Here]",
+          "logo": "https://www.canva.com/create/logos/",
+          "sameAs": ["@[YourSocialMediaLink]"]
+        },
+        {
+          "@type": "SoftwareApplication",
+          "name": "Container Tracking System (CTS)",
+          "operatingSystem": "Web, Mobile",
+          "applicationCategory": "https://schema.org/BusinessApplication",
+          "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.8",
+            "reviewCount": "25"
+          },
+          "offers": {
+            "@type": "Offer",
+            "price": "Contact for pricing",
+            "priceCurrency": "USD"
+          }
+        }
+      ]
+    }
+    </script>
+</head>
+<body data-bs-spy="scroll" data-bs-target="#main-nav" data-bs-offset="50">
+
+    <!-- Navigation Bar (Bootstrap Responsive) -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top shadow-sm" id="main-nav">
+        <div class="container-fluid">
+            <a class="navbar-brand d-flex align-items-center fw-bold text-primary-dark" href="index.html#home">
+                <svg class="feature-icon me-2 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10m0-10l-8-4m8 4l8-4"></path></svg>
+                CTS
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" href="solutions.html">Solutions</a>
+                    </li>
+                    <!-- Features Dropdown Menu -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle text-dark" href="#" id="navbarFeaturesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Features
+                        </a>
+                        <ul class="dropdown-menu shadow-lg" aria-labelledby="navbarFeaturesDropdown">
+                            <!-- NOTE: Linking the first feature to its own page -->
+                            <li><a class="dropdown-item" href="routing.html">📦 Routing & Dispatch</a></li>
+                            <!-- Linking remaining to sections on index.html for simplicity, acting as "single pages" -->
+                            <li><a class="dropdown-item" href="index.html#asset-tracking-detail">🗺️ Asset & Maintenance</a></li>
+                            <li><a class="dropdown-item" href="index.html#billing-detail">💰 Billing & QuickBooks</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="index.html#reporting-detail">📊 Reporting & Audit</a></li>
+                            <li><a class="dropdown-item" href="index.html#portal-detail">🖥️ Customer Portal</a></li>
+                            <li><a class="dropdown-item" href="index.html#compliance-detail">📜 DOT Compliance</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" href="index.html#user-guide">Guide</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" href="about.html">About</a>
+                    </li>
+                    <li class="nav-item ms-lg-3">
+                        <a href="index.html#demo-request" class="btn btn-primary btn-sm px-3 rounded-3 shadow-sm">Request Demo</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header id="home" class="bg-light pt-5 pb-5 pt-md-6 pb-md-7">
+        <div class="container text-center">
+            <h1 class="display-3 fw-bolder text-dark mb-3">
+                The <span class="text-primary-dark">Command Center</span> for Roll-Off Operations
+            </h1>
+            <p class="mt-3 mx-auto lead text-muted" style="max-width: 700px;">
+                CTS is the all-in-one software solution that automates routing, provides real-time container tracking, and seamlessly syncs with **QuickBooks**. Stop managing chaos, start commanding efficiency.
+            </p>
+            <div class="mt-5 d-flex justify-content-center flex-column flex-sm-row gap-3">
+                <a href="#demo-request" class="btn cta-gradient text-white btn-lg px-5 rounded-4 shadow-lg">
+                    Request a Live Demo
+                </a>
+                <a href="#features-hub" class="btn btn-outline-primary btn-lg px-5 rounded-4 shadow-sm">
+                    Explore Features
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Core Value Proposition -->
+    <section class="py-5 bg-white shadow-sm">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-3">
+                    <div class="p-4 bg-primary-subtle rounded-3 shadow-sm text-center shadow-sm-hover">
+                        <div class="feature-icon mx-auto mb-3 fw-bold fs-2 text-primary">📍</div>
+                        <h3 class="fs-5 fw-bold mb-2">Real-Time Visibility</h3>
+                        <p class="text-muted small">Track every container, truck, and driver on a live map.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="p-4 bg-success-subtle rounded-3 shadow-sm text-center shadow-sm-hover">
+                        <div class="feature-icon mx-auto mb-3 fw-bold fs-2 text-success">🗺️</div>
+                        <h3 class="fs-5 fw-bold mb-2">Route Efficiency</h3>
+                        <p class="text-muted small">Intelligent dispatching cuts fuel and labor costs immediately.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="p-4 bg-warning-subtle rounded-3 shadow-sm text-center shadow-sm-hover">
+                        <div class="feature-icon mx-auto mb-3 fw-bold fs-2 text-warning">🔗</div>
+                        <h3 class="fs-5 fw-bold mb-2">Billing Automation</h3>
+                        <p class="text-muted small">Field data automatically syncs for error-free QuickBooks invoicing.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="p-4 bg-danger-subtle rounded-3 shadow-sm text-center shadow-sm-hover">
+                        <div class="feature-icon mx-auto mb-3 fw-bold fs-2 text-danger">✅</div>
+                        <h3 class="fs-5 fw-bold mb-2">Compliance Guard</h3>
+                        <p class="text-muted small">Automated tracking for DOT Permits and maintenance schedules.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Hub (Internal Links updated) -->
+    <section id="features-hub" class="py-6 py-md-5">
+        <div class="container pt-5 pb-5">
+            <h2 class="text-center fw-bolder mb-2 text-primary-dark">CTS Core Feature Modules</h2>
+            <p class="text-center lead text-muted mb-5" style="max-width: 800px; margin: auto;">CTS replaces disjointed systems with a unified platform, ensuring maximum control over your inventory, fleet, and financials.</p>
+            
+            <div class="row g-4 justify-content-center">
+                
+                <!-- Feature Card 1: Orders & Routing (LINK TO NEW PAGE) -->
+                <div class="col-md-6 col-lg-4">
+                    <a href="routing.html" class="card h-100 shadow-sm border-primary-subtle p-3 text-decoration-none text-dark shadow-sm-hover">
+                        <div class="card-body">
+                            <div class="feature-icon fs-3 text-primary-dark mb-3">📦</div>
+                            <h3 class="fs-5 fw-bold mb-2">Orders, Routing & Tickets</h3>
+                            <p class="text-muted small">Maximize Profit per Route. Intelligent, map-based dispatching and real-time ticket management minimize drive time and maximize drops/picks per day.</p>
+                            <span class="text-primary fw-medium small">View Detailed Page &rarr;</span>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- Feature Card 2: Asset & Maintenance (LINK TO SECTION) -->
+                <div class="col-md-6 col-lg-4">
+                    <a href="#asset-tracking-detail" class="card h-100 shadow-sm border-success-subtle p-3 text-decoration-none text-dark shadow-sm-hover">
+                        <div class="card-body">
+                            <div class="feature-icon fs-3 text-success mb-3">🗺️</div>
+                            <h3 class="fs-5 fw-bold mb-2">Asset Tracking & Maintenance</h3>
+                            <p class="text-muted small">Never Lose an Asset. Ever. Real-time GPS tracking combined with proactive maintenance logging ensures every container is utilized and legal.</p>
+                            <span class="text-success fw-medium small">View Detailed Page &rarr;</span>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- Feature Card 3: Billing & QuickBooks (LINK TO SECTION) -->
+                <div class="col-md-6 col-lg-4">
+                    <a href="#billing-detail" class="card h-100 shadow-sm border-warning-subtle p-3 text-decoration-none text-dark shadow-sm-hover">
+                        <div class="card-body">
+                            <div class="feature-icon fs-3 text-warning mb-3">💰</div>
+                            <h3 class="fs-5 fw-bold mb-2">Invoicing & Accounting Sync</h3>
+                            <p class="text-muted small">Field-to-Invoice Automation. Automatically generate precise invoices and instantly sync all financial data with QuickBooks to accelerate cash flow.</p>
+                            <span class="text-warning fw-medium small">View Detailed Page &rarr;</span>
+                        </div>
+                    </a>
+                </div>
+                
+                <!-- Feature Card 4: Reporting & Audit (LINK TO SECTION) -->
+                <div class="col-md-6 col-lg-4">
+                    <a href="#reporting-detail" class="card h-100 shadow-sm border-danger-subtle p-3 text-decoration-none text-dark shadow-sm-hover">
+                        <div class="card-body">
+                            <div class="feature-icon fs-3 text-danger mb-3">📊</div>
+                            <h3 class="fs-5 fw-bold mb-2">Reporting & Audit Trail</h3>
+                            <p class="text-muted small">Actionable Insights, Not Just Data. Gain deep insights into asset utilization, profitability per route, and maintain an immutable record of all activity.</p>
+                            <span class="text-danger fw-medium small">View Detailed Page &rarr;</span>
+                        </div>
+                    </a>
+                </div>
+                
+                <!-- Feature Card 5: PO & Customer Portal (LINK TO SECTION) -->
+                <div class="col-md-6 col-lg-4">
+                    <a href="#portal-detail" class="card h-100 shadow-sm border-info-subtle p-3 text-decoration-none text-dark shadow-sm-hover">
+                        <div class="card-body">
+                            <div class="feature-icon fs-3 text-info mb-3">🖥️</div>
+                            <h3 class="fs-5 fw-bold mb-2">Customer Portal & PO Mgmt.</h3>
+                            <p class="text-muted small">24/7 Self-Service. Offers your clients a secure portal to manage rentals, make payments, and access documents, reducing inbound calls.</p>
+                            <span class="text-info fw-medium small">View Detailed Page &rarr;</span>
+                        </div>
+                    </a>
+                </div>
+                
+                <!-- Feature Card 6: DOT Compliance (LINK TO SECTION) -->
+                <div class="col-md-6 col-lg-4">
+                    <a href="#compliance-detail" class="card h-100 shadow-sm border-secondary-subtle p-3 text-decoration-none text-dark shadow-sm-hover">
+                        <div class="card-body">
+                            <div class="feature-icon fs-3 text-secondary mb-3">📜</div>
+                            <h3 class="fs-5 fw-bold mb-2">DOT Permits & Compliance</h3>
+                            <p class="text-muted small">Automated Regulatory Compliance. Systematically track and manage permits required by the DOT, avoiding costly fines and ensuring legality.</p>
+                            <span class="text-secondary fw-medium small">View Detailed Page &rarr;</span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Detailed Feature Section: 2. Billing & Accounting (QUOTATION, ACCOUNTING, INVOICING, QUICKBOOKS) -->
+    <section id="billing-detail" class="py-5 bg-light">
+        <div class="container pt-5 pb-5">
+            <div class="row align-items-center flex-row-reverse">
+                <div class="col-md-6">
+                    <h3 class="fs-2 fw-bolder text-warning mb-4">Feature Page: Billing & Accounting</h3>
+                    <p class="fs-5 mb-4">**Field-to-Invoice Automation.** Automatically generate precise invoices based on completed tickets, handle overage charges, and instantly sync with **QuickBooks**.</p>
+                    <ul class="list-unstyled text-dark fs-6">
+                        <li class="d-flex align-items-start mb-3">
+                            <svg class="feature-icon text-warning me-2 flex-shrink-0 mt-1" style="width:1.5rem;height:1.5rem" fill="currentColor" viewBox="0 0 16 16"><path d="M12 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2zM4 14V2h8v12H4zm3.5-9a.5.5 0 0 1 .5.5v2.5H10a.5.5 0 0 1 0 1H8.5V11a.5.5 0 0 1-1 0V8a.5.5 0 0 1 0-1h-1a.5.5 0 0 1 0-1h1a.5.5 0 0 1 .5-.5z"/></svg>
+                            <div>**Seamless QuickBooks Interface:** Instantly synchronize all invoices, payments, and customer records. Eliminate manual data entry and errors.</div>
+                        </li>
+                        <li class="d-flex align-items-start mb-3">
+                            <svg class="feature-icon text-warning me-2 flex-shrink-0 mt-1" style="width:1.5rem;height:1.5rem" fill="currentColor" viewBox="0 0 16 16"><path d="M3.5 13a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 0 1h-8a.5.5 0 0 1-.5-.5zM3.5 9a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5zM3.5 5a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1h-2a.5.5 0 0 1-.5-.5z"/><path d="M12 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h8zm-2 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2z"/></svg>
+                            <div>**Accurate Invoicing & Quotation:** Capture tonnage and overage charges automatically from completed **TICKETS**, ensuring you bill for every service.</div>
+                        </li>
+                        <li class="d-flex align-items-start mb-3">
+                            <svg class="feature-icon text-warning me-2 flex-shrink-0 mt-1" style="width:1.5rem;height:1.5rem" fill="currentColor" viewBox="0 0 16 16"><path d="M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h12zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z"/><path d="M7 6H5a.5.5 0 0 0 0 1h2v2H5a.5.5 0 0 0 0 1h2v3H6a.5.5 0 0 0 0 1h4a.5.5 0 0 0 0-1H8v-3h2a.5.5 0 0 0 0-1H8V7h2a.5.5 0 0 0 0-1H8V3H6a.5.5 0 0 0 0 1h1z"/></svg>
+                            <div>**PO Management:** Track and manage customer-issued Purchase Orders against jobs to validate billing and prevent revenue loss.</div>
+                        </li>
+                    </ul>
+                </div>
+                <!-- Placeholder for map/dashboard visualization -->
+                <div class="col-md-6 mt-4 mt-md-0 bg-white p-5 rounded-3 shadow-inset border border-secondary-subtle d-flex align-items-center justify-content-center" style="height: 300px;">
+                    <p class="text-muted text-center fs-5">Invoicing and QuickBooks Sync Dashboard Screenshot Placeholder</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Detailed Feature Section: 3. Asset & Maintenance (CONTAINERS, MAINTENANCE) -->
+    <section id="asset-tracking-detail" class="py-5 bg-white">
+        <div class="container pt-5 pb-5">
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <h3 class="fs-2 fw-bolder text-success mb-4">Feature Page: Asset Tracking & Maintenance</h3>
+                    <p class="fs-5 mb-4">**Never Lose a Container. Ever.** Real-time asset tracking with maintenance logging ensures every container and truck is utilized and legal.</p>
+                    <ul class="list-unstyled text-dark fs-6">
+                        <li class="d-flex align-items-start mb-3">
+                            <svg class="feature-icon text-success me-2 flex-shrink-0 mt-1" style="width:1.5rem;height:1.5rem" fill="currentColor" viewBox="0 0 16 16"><path d="M.5 3a.5.5 0 0 1 .5-.5h14a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5H1a.5.5 0 0 1-.5-.5V3zm0 4a.5.5 0 0 1 .5-.5h14a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5H1a.5.5 0 0 1-.5-.5V7zm0 4a.5.5 0 0 1 .5-.5h14a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5H1a.5.5 0 0 1-.5-.5v-1z"/></svg>
+                            <div>**Real-Time Inventory Control:** Track every **CONTAINER** by status (Available, Active, In-Transit) and precise location to improve utilization and drive revenue.</div>
+                        </li>
+                        <li class="d-flex align-items-start mb-3">
+                            <svg class="feature-icon text-success me-2 flex-shrink-0 mt-1" style="width:1.5rem;height:1.5rem" fill="currentColor" viewBox="0 0 16 16"><path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2-1A.5.5 0 0 1 12 5v7a.5.5 0 0 1-1 0V5a.5.5 0 0 1 .5-.5z"/><path d="M12.5 16a.5.5 0 0 1-.5-.5V.5a.5.5 0 0 1 1 0v15a.5.5 0 0 1-.5.5zM2 12.5a.5.5 0 0 1 .5-.5H5a.5.5 0 0 1 0 1H2.5a.5.5 0 0 1-.5-.5zM2 8a.5.5 0 0 1 .5-.5H6a.5.5 0 0 1 0 1H2.5a.5.5 0 0 1-.5-.5zM2 3.5a.5.5 0 0 1 .5-.5H8a.5.5 0 0 1 0 1H2.5a.5.5 0 0 1-.5-.5z"/></svg>
+                            <div>**Proactive Maintenance:** Schedule and track all vehicle and asset **MAINTENANCE** for Drivers, Trucks, and other assets to maximize uptime and fleet safety.</div>
+                        </li>
+                        <li class="d-flex align-items-start mb-3">
+                            <svg class="feature-icon text-success me-2 flex-shrink-0 mt-1" style="width:1.5rem;height:1.5rem" fill="currentColor" viewBox="0 0 16 16"><path d="M14.5 3a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5h-13a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h13zM1 3.5v9h14v-9H1z"/><path d="M3 5a1 1 0 0 1 1 1h8a1 1 0 0 1 1-1H3z"/><path d="M3 8a1 1 0 0 1 1 1h4a1 1 0 0 1 1-1H3z"/><path d="M3 11a1 1 0 0 1 1 1h2a1 1 0 0 1 1-1H3z"/></svg>
+                            <div>**Disposal Site Management:** Maintain accurate records for Transporters and Disposal Sites for seamless routing and waste tracking.</div>
+                        </li>
+                    </ul>
+                </div>
+                <!-- Placeholder for asset inventory visualization -->
+                <div class="col-md-6 mt-4 mt-md-0 bg-light p-5 rounded-3 shadow-inset border border-secondary-subtle d-flex align-items-center justify-content-center" style="height: 300px;">
+                    <p class="text-muted text-center fs-5">Asset Inventory & Maintenance Log Screenshot Placeholder</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Detailed Feature Section: 4. Reporting & Audit Trail (REPORTS, AUDIT TRAIL, VISIBILITY) -->
+    <section id="reporting-detail" class="py-5 bg-light">
+        <div class="container pt-5 pb-5">
+            <div class="row align-items-center flex-row-reverse">
+                <div class="col-md-6">
+                    <h3 class="fs-2 fw-bolder text-danger mb-4">Feature Page: Reporting & Audit Trail</h3>
+                    <p class="fs-5 mb-4">**Actionable Insights, Not Just Data.** Access customizable reports and maintain an immutable record of all system activity for confident decision-making and compliance.</p>
+                    <ul class="list-unstyled text-dark fs-6">
+                        <li class="d-flex align-items-start mb-3">
+                            <svg class="feature-icon text-danger me-2 flex-shrink-0 mt-1" style="width:1.5rem;height:1.5rem" fill="currentColor" viewBox="0 0 16 16"><path d="M11 2a1 1 0 0 0-1-1H6a1 1 0 0 0-1 1V0H4a1 1 0 0 0-1 1v14a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2h-1zm-3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zm0 2a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zm0-4a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM9.5 5.5a.5.5 0 0 0 0-1H11a.5.5 0 0 0 0 1h-1.5z"/></svg>
+                            <div>**Comprehensive Reports:** Generate Disposal Reports, Overdue Lists, Print Routes, Orders, Ticket, and Container Reports (**REPORTS**).</div>
+                        </li>
+                        <li class="d-flex align-items-start mb-3">
+                            <svg class="feature-icon text-danger me-2 flex-shrink-0 mt-1" style="width:1.5rem;height:1.5rem" fill="currentColor" viewBox="0 0 16 16"><path d="M1 2.5A1.5 1.5 0 0 1 2.5 1h8A1.5 1.5 0 0 1 12 2.5v12.793l-3.328-3.328a.5.5 0 0 0-.708 0L5.5 14.293V2.5a.5.5 0 0 0-1 0v12.793l-3.328-3.328a.5.5 0 0 0-.708 0L2 14.293V2.5a.5.5 0 0 0-.5-.5h-8z"/></svg>
+                            <div>**Full Audit Trail:** Log every system action, user change, and update for indisputable data for dispute resolution and compliance checks.</div>
+                        </li>
+                        <li class="d-flex align-items-start mb-3">
+                            <svg class="feature-icon text-danger me-2 flex-shrink-0 mt-1" style="width:1.5rem;height:1.5rem" fill="currentColor" viewBox="0 0 16 16"><path d="M1 2.5A1.5 1.5 0 0 1 2.5 1h12A1.5 1.5 0 0 1 16 2.5v11A1.5 1.5 0 0 1 14.5 15H2.5A1.5 1.5 0 0 1 1 13.5v-11zM11 2.5a.5.5 0 0 0-1 0v11a.5.5 0 0 0 1 0v-11zM7 2.5a.5.5 0 0 0-1 0v11a.5.5 0 0 0 1 0v-11z"/></svg>
+                            <div>**Business Visibility:** Analyze key metrics like transportation efficiency, turnaround times, and resource utilization on intuitive dashboards.</div>
+                        </li>
+                    </ul>
+                </div>
+                <!-- Placeholder for reporting visualization -->
+                <div class="col-md-6 mt-4 mt-md-0 bg-white p-5 rounded-3 shadow-inset border border-secondary-subtle d-flex align-items-center justify-content-center" style="height: 300px;">
+                    <p class="text-muted text-center fs-5">Reporting Dashboard Screenshot Placeholder</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Detailed Feature Section: 5. Customer Portal & PO Mgmt (CUSTOMER PORTAL, PO MANAGEMENT) -->
+    <section id="portal-detail" class="py-5 bg-white">
+        <div class="container pt-5 pb-5">
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <h3 class="fs-2 fw-bolder text-info mb-4">Feature Page: Customer Portal & PO Mgmt</h3>
+                    <p class="fs-5 mb-4">**24/7 Self-Service & Control.** Offer your business clients complete transparency and self-service capabilities, dramatically cutting down on customer service calls.</p>
+                    <ul class="list-unstyled text-dark fs-6">
+                        <li class="d-flex align-items-start mb-3">
+                            <svg class="feature-icon text-info me-2 flex-shrink-0 mt-1" style="width:1.5rem;height:1.5rem" fill="currentColor" viewBox="0 0 16 16"><path d="M12.5 16a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7Zm-.5-5a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2a.5.5 0 0 1 .5-.5z"/><path d="M3.208 1.516A8.006 8.006 0 0 0 1 9.5a7.5 7.5 0 0 0 10.465 6.301l.668-.668A6.5 6.5 0 0 1 2 9.5a6.006 6.006 0 0 1 9.544-5.07l.695-.716A8.005 8.005 0 0 0 3.208 1.516z"/><path d="M13 3.5a.5.5 0 0 1 .5-.5h.5A2.5 2.5 0 0 1 16 2.5v12.5a.5.5 0 0 1-.5.5h-3A1.5 1.5 0 0 1 11 14V3.5a.5.5 0 0 1 .5-.5z"/></svg>
+                            <div>**Client Access:** Customers can view the status of active rentals, track delivery/pickup timelines, and check service history without calling the office.</div>
+                        </li>
+                        <li class="d-flex align-items-start mb-3">
+                            <svg class="feature-icon text-info me-2 flex-shrink-0 mt-1" style="width:1.5rem;height:1.5rem" fill="currentColor" viewBox="0 0 16 16"><path d="M9.5 4a.5.5 0 0 0 0 1h1a.5.5 0 0 0 0-1h-1z"/><path d="M14 0H2a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2zM2 1h12a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1z"/><path d="M4 11a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1v-2z"/><path d="M7 6H5a.5.5 0 0 1 0-1h2a.5.5 0 0 1 0 1z"/></svg>
+                            <div>**Online Documentation:** Allow clients to download invoices, payment receipts, and weight tickets instantly.</div>
+                        </li>
+                        <li class="d-flex align-items-start mb-3">
+                            <svg class="feature-icon text-info me-2 flex-shrink-0 mt-1" style="width:1.5rem;height:1.5rem" fill="currentColor" viewBox="0 0 16 16"><path d="M7 6a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-1 0v-3a.5.5 0 0 1 .5-.5z"/><path d="M10 5.5a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-1 0v-3a.5.5 0 0 1 .5-.5z"/><path d="M13 6a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-1 0v-3a.5.5 0 0 1 .5-.5z"/><path d="M15 16a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v14zM2 2v12h12V2H2z"/></svg>
+                            <div>**Purchase Order (PO) Validation:** Cross-reference all orders against client-provided PO numbers to eliminate billing disputes and revenue leakage.</div>
+                        </li>
+                    </ul>
+                </div>
+                <!-- Placeholder for portal visualization -->
+                <div class="col-md-6 mt-4 mt-md-0 bg-light p-5 rounded-3 shadow-inset border border-secondary-subtle d-flex align-items-center justify-content-center" style="height: 300px;">
+                    <p class="text-muted text-center fs-5">Customer Portal Interface Screenshot Placeholder</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Detailed Feature Section: 6. DOT Permits & Compliance (DOT PERMITS) -->
+    <section id="compliance-detail" class="py-5 bg-light">
+        <div class="container pt-5 pb-5">
+            <div class="row align-items-center flex-row-reverse">
+                <div class="col-md-6">
+                    <h3 class="fs-2 fw-bolder text-secondary mb-4">Feature Page: DOT Permits & Compliance</h3>
+                    <p class="fs-5 mb-4">**Compliance Guarantee.** Automatically track municipal permits, DOT expirations, and regulatory documentation to avoid costly fines and service delays.</p>
+                    <ul class="list-unstyled text-dark fs-6">
+                        <li class="d-flex align-items-start mb-3">
+                            <svg class="feature-icon text-secondary me-2 flex-shrink-0 mt-1" style="width:1.5rem;height:1.5rem" fill="currentColor" viewBox="0 0 16 16"><path d="M4 1a1 1 0 0 1 1 1v10a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h1z"/><path d="M8 1a1 1 0 0 1 1 1v10a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h1z"/><path d="M12 1a1 1 0 0 1 1 1v10a1 1 0 0 1-1 1H11a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h1z"/></svg>
+                            <div>**Mandatory Permit Tracking:** Link permits (**DOT PERMITS**) directly to job sites, ensuring every drop is legal before the truck leaves the yard.</div>
+                        </li>
+                        <li class="d-flex align-items-start mb-3">
+                            <svg class="feature-icon text-secondary me-2 flex-shrink-0 mt-1" style="width:1.5rem;height:1.5rem" fill="currentColor" viewBox="0 0 16 16"><path d="M12 7H4a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h8a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5z"/><path d="M11.5 2a.5.5 0 0 1 .5.5V14a.5.5 0 0 1-.5.5h-7a.5.5 0 0 1-.5-.5V2.5a.5.5 0 0 1 .5-.5h7zM12 3H4v10h8V3z"/><path d="M8 8.5a.5.5 0 0 0-.5-.5h-2a.5.5 0 0 0 0 1h2a.5.5 0 0 0 .5-.5z"/><path d="M8 10.5a.5.5 0 0 0-.5-.5h-2a.5.5 0 0 0 0 1h2a.5.5 0 0 0 .5-.5z"/></svg>
+                            <div>**Expiration Alerts:** Automatically flag permits that are **Required & Expiring** soon (including driver licenses and truck registrations) using the maintenance module.</div>
+                        </li>
+                        <li class="d-flex align-items-start mb-3">
+                            <svg class="feature-icon text-secondary me-2 flex-shrink-0 mt-1" style="width:1.5rem;height:1.5rem" fill="currentColor" viewBox="0 0 16 16"><path d="M1 2.5A1.5 1.5 0 0 1 2.5 1h11A1.5 1.5 0 0 1 15 2.5v10A1.5 1.5 0 0 1 13.5 14h-11A1.5 1.5 0 0 1 1 12.5v-10zM15 13.5V2.5a.5.5 0 0 0-.5-.5h-13a.5.5 0 0 0-.5.5v11a.5.5 0 0 0 .5.5h13a.5.5 0 0 0 .5-.5z"/><path d="M7 6H5a.5.5 0 0 0 0 1h2a.5.5 0 0 0 0-1z"/><path d="M7 8H5a.5.5 0 0 0 0 1h2a.5.5 0 0 0 0-1z"/><path d="M7 10H5a.5.5 0 0 0 0 1h2a.5.5 0 0 0 0-1z"/></svg>
+                            <div>**Valid & Expired Tracking:** Maintain a clear list of **All D.O.T Permits** and separate **Valid & Expired DOT** records for rapid auditing.</div>
+                        </li>
+                    </ul>
+                </div>
+                <!-- Placeholder for compliance visualization -->
+                <div class="col-md-6 mt-4 mt-md-0 bg-white p-5 rounded-3 shadow-inset border border-secondary-subtle d-flex align-items-center justify-content-center" style="height: 300px;">
+                    <p class="text-muted text-center fs-5">DOT Permit Tracking Dashboard Screenshot Placeholder</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- User Guide Section -->
+    <section id="user-guide" class="py-5 bg-light">
+        <div class="container pt-5 pb-5">
+            <h2 class="text-center fw-bolder mb-2 text-primary-dark">CTS Quick Start Guide</h2>
+            <p class="text-center lead text-muted mb-5" style="max-width: 800px; margin: auto;">The Container Tracking System (CTS) gives you total control. Master these core processes in minutes to streamline your operation from Day One.</p>
+
+            <div class="row g-4">
+                <!-- Guide Step 1 -->
+                <div class="col-md-4">
+                    <div class="card h-100 shadow-sm border-top border-5 border-primary p-3">
+                        <div class="card-body">
+                            <h3 class="fs-4 fw-bold mb-3 text-primary-dark">1. Order Creation</h3>
+                            <p class="mb-4 text-dark small">**Goal:** Create a complete, billable work order in under 60 seconds.</p>
+                            <ul class="list-group list-group-flush small text-muted">
+                                <li class="list-group-item px-0">Select Customer, Job Type (Drop, Switch, Pickup).</li>
+                                <li class="list-group-item px-0">System checks inventory and DOT permit needs automatically.</li>
+                                <li class="list-group-item px-0">Enter Quotation and PO Number to finalize.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <!-- Guide Step 2 -->
+                <div class="col-md-4">
+                    <div class="card h-100 shadow-sm border-top border-5 border-primary p-3">
+                        <div class="card-body">
+                            <h3 class="fs-4 fw-bold mb-3 text-primary-dark">2. Route Assignment</h3>
+                            <p class="mb-4 text-dark small">**Goal:** Build the most profitable route for the day's load.</p>
+                            <ul class="list-group list-group-flush small text-muted">
+                                <li class="list-group-item px-0">Use the interactive Map Board to see all open tickets.</li>
+                                <li class="list-group-item px-0">Drag-and-Drop tickets onto a driver for automatic sequence optimization.</li>
+                                <li class="list-group-item px-0">Driver updates status (e.g., "Container Dropped") via mobile, closing the office loop.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <!-- Guide Step 3 -->
+                <div class="col-md-4">
+                    <div class="card h-100 shadow-sm border-top border-5 border-primary p-3">
+                        <div class="card-body">
+                            <h3 class="fs-4 fw-bold mb-3 text-primary-dark">3. Financial Sync</h3>
+                            <p class="mb-4 text-dark small">**Goal:** Ensure every completed job is accurately billed and synced.</p>
+                            <ul class="list-group list-group-flush small text-muted">
+                                <li class="list-group-item px-0">Review tickets marked "Closed" in the Invoicing module.</li>
+                                <li class="list-group-item px-0">System automatically calculates rental duration and overage charges.</li>
+                                <li class="list-group-item px-0">Use the **QuickBooks Interface** to batch-send approved invoices.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mt-5 text-center">
+                <a href="#demo-request" class="btn btn-danger btn-lg px-5 rounded-4 shadow-lg fw-bold">
+                    Watch the Full Demo (Coming Soon!) & Request Consultation
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Demo Request Form Section -->
+    <section id="demo-request" class="py-5 bg-primary-dark">
+        <div class="container pt-5 pb-5">
+            <div class="row justify-content-center">
+                <div class="col-lg-7 col-xl-6">
+                    <div class="bg-white p-4 p-md-5 rounded-4 shadow-lg">
+                        <div class="text-center mb-4">
+                            <h2 class="fs-3 fw-bolder text-primary-dark">See CTS in Action</h2>
+                            <p class="mt-2 text-dark lead">Schedule your free, personalized demo today.</p>
+                        </div>
+                        
+                        <div class="mb-4 p-3 bg-warning-subtle rounded-3 border border-warning-subtle">
+                            <p class="fw-bold text-warning-dark">In your demo, we guarantee you'll see how to:</p>
+                            <ul class="list-unstyled small text-muted mt-2 mb-0">
+                                <li><span class="text-warning fw-bold me-1">&bull;</span> Optimize a 20-stop route in under 60 seconds.</li>
+                                <li><span class="text-warning fw-bold me-1">&bull;</span> Automate invoicing and sync financials with QuickBooks.</li>
+                                <li><span class="text-warning fw-bold me-1">&bull;</span> Track assets, maintenance, and DOT Permits.</li>
+                            </ul>
+                        </div>
+
+                        <form action="#" method="POST" onsubmit="handleDemoRequest(event)">
+                            <div class="row g-3">
+                                <div class="col-md-6">
+                                    <input type="text" name="name" placeholder="Full Name *" required class="form-control p-3 rounded-3">
+                                </div>
+                                <div class="col-md-6">
+                                    <input type="email" name="email" placeholder="Work Email *" required class="form-control p-3 rounded-3">
+                                </div>
+                                <div class="col-md-6">
+                                    <input type="text" name="company" placeholder="Company Name *" required class="form-control p-3 rounded-3">
+                                </div>
+                                <div class="col-md-6">
+                                    <select name="containers" class="form-select p-3 rounded-3">
+                                        <option value="">Number of Containers/Roll-Offs</option>
+                                        <option>1 - 10</option>
+                                        <option>11 - 50</option>
+                                        <option>51 - 100</option>
+                                        <option>100+</option>
+                                    </select>
+                                </div>
+                                <div class="col-12">
+                                    <textarea name="goal" rows="3" placeholder="What is your primary goal for a new system? (e.g., Reduce billing errors, improve driver efficiency.)" class="form-control p-3 rounded-3"></textarea>
+                                </div>
+                            </div>
+                            <div id="demo-message" class="text-center mt-4 text-success fw-bold hidden"></div>
+                            <button type="submit" class="w-100 mt-4 btn btn-primary btn-lg rounded-3 fw-bold shadow">
+                                REQUEST YOUR LIVE DEMO
+                            </button>
+                            <p class="text-center small text-muted mt-3">We respect your privacy. View our <a href="#privacy" class="text-primary-dark fw-bold">Privacy Policy</a>.</p>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Legal Sections (Collapsible) -->
+    <div class="container py-5 bg-white">
+        <div class="accordion" id="legalAccordion">
+            
+            <!-- Privacy Policy -->
+            <div class="accordion-item shadow-sm">
+                <h2 class="accordion-header" id="headingPrivacy">
+                    <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#collapsePrivacy" aria-expanded="false" aria-controls="collapsePrivacy">
+                        🔒 Privacy Policy (Placeholder)
+                    </button>
+                </h2>
+                <div id="collapsePrivacy" class="accordion-collapse collapse" aria-labelledby="headingPrivacy" data-bs-parent="#legalAccordion">
+                    <div class="accordion-body">
+                        <p class="text-sm text-muted mb-4">**Last Updated:** [Date of Publication] - **NOTE:** This is placeholder content and must be reviewed by legal counsel.</p>
+                        
+                        <h3 class="fs-5 fw-bold mt-4 mb-3">1. Information We Collect</h3>
+                        <p class="text-dark">We collect information necessary to provide and maintain the Service, which includes:</p>
+                        <ul class="list-group list-group-flush small text-muted mb-4">
+                            <li class="list-group-item px-0">**Account and Contact Data:** Names, telephone numbers, emails, addresses, and fax numbers for customers, drivers, transporters, and disposal sites.</li>
+                            <li class="list-group-item px-0">**Operational and Compliance Data:** Order and delivery dates, job site locations, container sizes/numbers, waste codes, DOT Permit numbers, and policy expiration dates for drivers and trucks.</li>
+                            <li class="list-group-item px-0">**Financial Data:** Quotation and pricing details, tax rates, PO Numbers, and transactional data for integration with accounting systems like QuickBooks.</li>
+                            <li class="list-group-item px-0">**Usage Data:** Details about how and when you use the Service, captured through the Audit Trail feature.</li>
+                        </ul>
+
+                        <h3 class="fs-5 fw-bold mt-4 mb-3">2. How We Use Your Information</h3>
+                        <p class="text-dark">We use the collected data exclusively to: Provide the Service, Billing and Accounting, Improve Efficiency, and Ensure Compliance.</p>
+                        
+                        <h3 class="fs-5 fw-bold mt-4 mb-3">3. Data Sharing and Disclosure</h3>
+                        <p class="text-dark">We do not sell or rent your personal or operational data to third parties. Data is shared only as necessary to provide the core functions of the Service: With Your Customers (via the Customer Portal), with Accounting Providers (via QuickBooks), and as required by law.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Terms of Use -->
+            <div class="accordion-item shadow-sm mt-3">
+                <h2 class="accordion-header" id="headingTerms">
+                    <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTerms" aria-expanded="false" aria-controls="collapseTerms">
+                        ⚖️ Terms of Use (Placeholder)
+                    </button>
+                </h2>
+                <div id="collapseTerms" class="accordion-collapse collapse" aria-labelledby="headingTerms" data-bs-parent="#legalAccordion">
+                    <div class="accordion-body">
+                        <p class="text-sm text-muted mb-4">**Last Updated:** [Date of Publication] - **NOTE:** This is placeholder content and must be reviewed by legal counsel.</p>
+
+                        <h3 class="fs-5 fw-bold mt-4 mb-3">1. Acceptance of Terms</h3>
+                        <p class="text-dark">By accessing and using the Container Tracking System ("CTS" or "Service"), you agree to be bound by these Terms of Use and all applicable laws and regulations. If you do not agree with any of these terms, you are prohibited from using or accessing this site.</p>
+
+                        <h3 class="fs-5 fw-bold mt-4 mb-3">2. Description of Service</h3>
+                        <p class="text-dark">The CTS is a Software-as-a-Service (SaaS) solution designed for companies that own and rent "Roll Off" containers (Dumpsters). The Service provides an all-in-one platform for managing the entire operation.</p>
+
+                        <h3 class="fs-5 fw-bold mt-4 mb-3">3. User Obligations and Conduct</h3>
+                        <p class="text-dark">You are responsible for maintaining the confidentiality of your account credentials. You agree to use the Service only for lawful business purposes. You shall not attempt to gain unauthorized access to any portion or feature of the Service.</p>
+
+                        <h3 class="fs-5 fw-bold mt-4 mb-3">4. Intellectual Property Rights</h3>
+                        <p class="text-dark">The CTS software is the property of [Your Company Name] and is protected by intellectual property laws. You are granted a limited, non-exclusive, non-transferable license to use the Service for your internal business operations only.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-4 mt-auto">
+        <div class="container text-center">
+            <p class="mb-2 fw-semibold">CTS: The Command Center for Roll-Off Operations</p>
+            <div class="d-flex justify-content-center flex-wrap gap-3 small text-muted">
+                <a href="#" class="text-white-50 text-decoration-none hover-white">Privacy Policy</a>
+                <a href="#" class="text-white-50 text-decoration-none hover-white">Terms of Use</a>
+                <span class="d-block w-100 w-sm-auto">&copy; 2024 SISCOTEK. All rights reserved.</span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- JavaScript for Form Handling -->
+    <script>
+        // Simple Form Submission Handler
+        function handleDemoRequest(event) {
+            event.preventDefault();
+            const messageBox = document.getElementById('demo-message');
+            messageBox.classList.remove('hidden');
+            messageBox.innerHTML = 'Thank you! Your demo request has been sent. We will contact you shortly to schedule your personalized consultation.';
+            event.target.reset(); // Clear the form fields
+            
+            // Hide the message after 5 seconds
+            setTimeout(() => {
+                messageBox.classList.add('hidden');
+            }, 5000);
+        }
+    </script>
+</body>
+</html>
