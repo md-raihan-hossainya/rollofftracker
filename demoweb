@@ -1,0 +1,1020 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CTS: The Command Center for Roll-Off Operations | Dumpster Management Software</title>
+    
+    <!-- Bootstrap 5 CSS CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Custom Styles -->
+    <style>
+        :root {
+            --bs-primary: #1d4ed8;
+            --bs-body-font-family: 'Inter', sans-serif;
+        }
+        body { font-family: 'Inter', sans-serif; background-color: #f8f9fa; }
+        html { scroll-behavior: smooth; }
+        
+        /* Brand Colors */
+        .bg-primary-dark { background-color: #0b1a3d !important; } /* Deep Navy */
+        .text-primary-dark { color: #1d4ed8 !important; } /* Bright Blue */
+        
+        /* UI Elements */
+        .shadow-sm-hover:hover { box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important; transform: translateY(-3px); transition: all 0.3s ease; }
+        .cta-gradient { background-image: linear-gradient(to right, #1d4ed8, #3b82f6); border: none; color: white; }
+        .cta-gradient:hover { background-image: linear-gradient(to right, #1e40af, #1d4ed8); color: white; }
+        .feature-icon { width: 3rem; height: 3rem; }
+        .section-padding { padding-top: 5rem; padding-bottom: 5rem; }
+        .hero-bg { background-color: #eef2ff; }
+        
+        /* Card & Component Styles from New Design */
+        .feature-card { cursor: pointer; transition: transform 0.3s ease; }
+        .feature-card:hover { transform: translateY(-5px); }
+
+        /* Animations for Page Transitions */
+        .fade-in-up { animation: fadeInUp 0.5s ease-out; }
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translate3d(0, 20px, 0); }
+            to { opacity: 1; transform: translate3d(0, 0, 0); }
+        }
+        
+        /* Helper to hide sections for SPA */
+        .page-content { display: none; }
+    </style>
+
+    <!-- SEO & Meta -->
+    <meta name="description" content="CTS is the all-in-one software solution for roll-off dumpster companies. Automate routing, track containers in real-time, and seamlessly sync financials with QuickBooks.">
+</head>
+<body data-bs-spy="scroll" data-bs-target="#main-nav" data-bs-offset="50">
+
+    <!-- Navigation Bar (Globally Consistent Header) -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top shadow-sm" id="main-nav">
+        <div class="container-fluid">
+            <a class="navbar-brand d-flex align-items-center fw-bold text-primary-dark" href="#home" onclick="showPage('home')">
+                <svg class="feature-icon me-2 text-primary" style="width: 2rem; height: 2rem;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10m0-10l-8-4m8 4l8-4"></path></svg>
+                CTS
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link text-dark fw-medium" href="#home" onclick="showPage('home')">Home</a>
+                    </li>
+                    
+                    <!-- Solutions Dropdown -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle text-dark fw-medium" href="#" id="navbarSolutionsDropdown" role="button" data-bs-toggle="dropdown">
+                            Solutions
+                        </a>
+                        <ul class="dropdown-menu shadow-lg">
+                            <li><a class="dropdown-item" href="#solutions-efficiency" onclick="showPage('solutions-efficiency')">🚀 Operational Efficiency</a></li>
+                            <li><a class="dropdown-item" href="#solutions-financial" onclick="showPage('solutions-financial')">💰 Financial Automation</a></li>
+                            <li><a class="dropdown-item" href="#solutions-compliance" onclick="showPage('solutions-compliance')">✅ Risk & Compliance</a></li>
+                        </ul>
+                    </li>
+
+                    <!-- Features Dropdown -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle text-dark fw-medium" href="#" id="navbarFeaturesDropdown" role="button" data-bs-toggle="dropdown">
+                            Features
+                        </a>
+                        <ul class="dropdown-menu shadow-lg">
+                            <li><a class="dropdown-item" href="#features-container" onclick="showPage('features-container')">📦 Container Tracking</a></li>
+                            <li><a class="dropdown-item" href="#features-order" onclick="showPage('features-order')">📝 Orders & Dispatch</a></li>
+                            <li><a class="dropdown-item" href="#features-invoice" onclick="showPage('features-invoice')">💰 Invoicing & Billing</a></li>
+                            <li><a class="dropdown-item" href="#features-audit" onclick="showPage('features-audit')">📜 Audit Trail</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="#integrations-quickbooks" onclick="showPage('integrations-quickbooks')">🔄 QuickBooks Sync</a></li>
+                            <li><a class="dropdown-item" href="#reporting" onclick="showPage('reporting')">📊 Reporting</a></li>
+                        </ul>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a class="nav-link text-dark fw-medium" href="#about" onclick="showPage('about')">About</a>
+                    </li>
+                    <li class="nav-item ms-lg-3">
+                        <a href="#demo-request" onclick="showPage('demo')" class="btn btn-primary btn-sm px-3 rounded-3 shadow-sm">Request Demo</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content Area -->
+    <main>
+
+        <!-- PAGE: HOME -->
+        <section id="home" class="page-content fade-in-up" style="display: block;">
+            <!-- Hero Section -->
+            <header class="bg-light pt-5 pb-5 pt-md-6 pb-md-7 section-padding">
+                <div class="container text-center">
+                    <h1 class="display-3 fw-bolder text-dark mb-3">
+                        The <span class="text-primary-dark">Command Center</span> for Roll-Off Operations
+                    </h1>
+                    <p class="mt-3 mx-auto lead text-muted" style="max-width: 700px;">
+                        CTS is the all-in-one software solution that automates routing, provides real-time container tracking, and seamlessly syncs with <b>QuickBooks</b>. Stop managing chaos, start commanding efficiency.
+                    </p>
+                    <div class="mt-5 d-flex justify-content-center flex-column flex-sm-row gap-3">
+                        <a href="#demo" onclick="showPage('demo')" class="btn cta-gradient btn-lg px-5 rounded-4 shadow-lg">
+                            Request a Live Demo
+                        </a>
+                        <a href="#solutions-efficiency" onclick="showPage('solutions-efficiency')" class="btn btn-outline-primary btn-lg px-5 rounded-4 shadow-sm">
+                            Explore Solutions
+                        </a>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Core Value Proposition -->
+            <section class="py-5 bg-white shadow-sm section-padding">
+                <div class="container">
+                    <div class="row g-4">
+                        <div class="col-md-6 col-lg-3">
+                            <div class="p-4 bg-primary-subtle rounded-3 shadow-sm text-center shadow-sm-hover h-100">
+                                <div class="feature-icon mx-auto mb-3 fw-bold fs-2 text-primary">📍</div>
+                                <h3 class="fs-5 fw-bold mb-2">Real-Time Visibility</h3>
+                                <p class="text-muted small">Track every container, truck, and driver on a live map.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-lg-3">
+                            <div class="p-4 bg-success-subtle rounded-3 shadow-sm text-center shadow-sm-hover h-100">
+                                <div class="feature-icon mx-auto mb-3 fw-bold fs-2 text-success">🗺️</div>
+                                <h3 class="fs-5 fw-bold mb-2">Route Efficiency</h3>
+                                <p class="text-muted small">Intelligent dispatching cuts fuel and labor costs immediately.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-lg-3">
+                            <div class="p-4 bg-warning-subtle rounded-3 shadow-sm text-center shadow-sm-hover h-100">
+                                <div class="feature-icon mx-auto mb-3 fw-bold fs-2 text-warning">🔗</div>
+                                <h3 class="fs-5 fw-bold mb-2">Billing Automation</h3>
+                                <p class="text-muted small">Field data automatically syncs for error-free QuickBooks invoicing.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-lg-3">
+                            <div class="p-4 bg-danger-subtle rounded-3 shadow-sm text-center shadow-sm-hover h-100">
+                                <div class="feature-icon mx-auto mb-3 fw-bold fs-2 text-danger">✅</div>
+                                <h3 class="fs-5 fw-bold mb-2">Compliance Guard</h3>
+                                <p class="text-muted small">Automated tracking for DOT Permits and maintenance schedules.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Solutions Section (Home Integration) -->
+            <section class="py-6 py-md-5 bg-light section-padding">
+                <div class="container">
+                    <h2 class="text-center fw-bolder mb-2 text-primary-dark">How CTS Solves Your Biggest Problems</h2>
+                    <p class="text-center lead text-muted mb-5">CTS is engineered to address the specific efficiency, financial, and compliance challenges faced by roll-off haulers.</p>
+                    
+                    <div class="row g-4 justify-content-center">
+                        <div class="col-md-4">
+                            <div onclick="showPage('solutions-efficiency')" class="card h-100 shadow-sm border-0 p-3 shadow-sm-hover feature-card">
+                                <div class="card-body">
+                                    <h3 class="card-title fw-bold text-success">Route Optimization</h3>
+                                    <p class="card-text text-muted">Manual routing leads to wasted time, fuel costs, and driver confusion.</p>
+                                    <p class="fw-bold text-dark">Solution: Intelligent Dispatching</p>
+                                    <span class="text-primary fw-medium small">Learn More &rarr;</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div onclick="showPage('solutions-financial')" class="card h-100 shadow-sm border-0 p-3 shadow-sm-hover feature-card">
+                                <div class="card-body">
+                                    <h3 class="card-title fw-bold text-warning">Billing Errors</h3>
+                                    <p class="card-text text-muted">Overages, misapplied payments, and double data entry slow down cash flow.</p>
+                                    <p class="fw-bold text-dark">Solution: QuickBooks Automation</p>
+                                    <span class="text-warning fw-medium small">Learn More &rarr;</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div onclick="showPage('solutions-compliance')" class="card h-100 shadow-sm border-0 p-3 shadow-sm-hover feature-card">
+                                <div class="card-body">
+                                    <h3 class="card-title fw-bold text-danger">Asset Risk</h3>
+                                    <p class="card-text text-muted">Lost containers, expired driver licenses, or overdue DOT permits create liability.</p>
+                                    <p class="fw-bold text-dark">Solution: Proactive Visibility</p>
+                                    <span class="text-danger fw-medium small">Learn More &rarr;</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Feature Grid Navigation -->
+            <section class="section-padding bg-white">
+                <div class="container">
+                    <h2 class="text-center fw-bolder mb-2 text-primary-dark">CTS Core Feature Modules</h2>
+                    <p class="text-center lead text-muted mb-5">Everything you need to run a profitable fleet.</p>
+                    <div class="row g-4 justify-content-center">
+                        <div class="col-md-6 col-lg-4">
+                            <div onclick="showPage('features-order')" class="card h-100 shadow-sm border-primary-subtle p-3 shadow-sm-hover feature-card">
+                                <div class="card-body">
+                                    <div class="feature-icon fs-3 text-primary-dark mb-3">📦</div>
+                                    <h3 class="fs-5 fw-bold mb-2">Orders & Routing</h3>
+                                    <p class="text-muted small">Intelligent dispatching and ticketing.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-lg-4">
+                            <div onclick="showPage('features-invoice')" class="card h-100 shadow-sm border-warning-subtle p-3 shadow-sm-hover feature-card">
+                                <div class="card-body">
+                                    <div class="feature-icon fs-3 text-warning mb-3">💰</div>
+                                    <h3 class="fs-5 fw-bold mb-2">Invoicing & Sync</h3>
+                                    <p class="text-muted small">Field-to-invoice automation with QuickBooks.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-lg-4">
+                            <div onclick="showPage('features-container')" class="card h-100 shadow-sm border-success-subtle p-3 shadow-sm-hover feature-card">
+                                <div class="card-body">
+                                    <div class="feature-icon fs-3 text-success mb-3">🗺️</div>
+                                    <h3 class="fs-5 fw-bold mb-2">Asset Tracking</h3>
+                                    <p class="text-muted small">Real-time inventory control and GPS.</p>
+                                </div>
+                            </div>
+                        </div>
+                         <!-- Additional Features -->
+                        <div class="col-md-6 col-lg-4">
+                             <div onclick="showPage('features-audit')" class="card h-100 shadow-sm border-danger-subtle p-3 shadow-sm-hover feature-card">
+                                <div class="card-body">
+                                    <div class="feature-icon fs-3 text-danger mb-3">📊</div>
+                                    <h3 class="fs-5 fw-bold mb-2">Reporting & Audit</h3>
+                                    <p class="text-muted small">Gain deep insights and maintain immutable records.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-lg-4">
+                             <div onclick="showPage('features-container')" class="card h-100 shadow-sm border-info-subtle p-3 shadow-sm-hover feature-card">
+                                <div class="card-body">
+                                    <div class="feature-icon fs-3 text-info mb-3">🖥️</div>
+                                    <h3 class="fs-5 fw-bold mb-2">Customer Portal</h3>
+                                    <p class="text-muted small">24/7 self-service for your clients.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-lg-4">
+                             <div onclick="showPage('features-audit')" class="card h-100 shadow-sm border-secondary-subtle p-3 shadow-sm-hover feature-card">
+                                <div class="card-body">
+                                    <div class="feature-icon fs-3 text-secondary mb-3">📜</div>
+                                    <h3 class="fs-5 fw-bold mb-2">Compliance</h3>
+                                    <p class="text-muted small">Automated DOT permit tracking.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Guide Section (Home Integration) -->
+            <section class="py-5 bg-light section-padding">
+                <div class="container">
+                    <h2 class="text-center fw-bolder mb-2 text-primary-dark">CTS Quick Start Guide</h2>
+                    <p class="text-center lead text-muted mb-5">Master these core processes in minutes.</p>
+                    <div class="row g-4">
+                        <div class="col-md-4">
+                            <div class="card h-100 shadow-sm border-top border-5 border-primary p-3">
+                                <div class="card-body">
+                                    <h3 class="fs-4 fw-bold mb-3 text-primary-dark">1. Order Creation</h3>
+                                    <p class="mb-4 text-dark small">Goal: Create a billable work order in under 60 seconds.</p>
+                                    <ul class="list-group list-group-flush small text-muted">
+                                        <li class="list-group-item bg-transparent px-0">Select Customer & Job Type.</li>
+                                        <li class="list-group-item bg-transparent px-0">Auto-check inventory.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card h-100 shadow-sm border-top border-5 border-primary p-3">
+                                <div class="card-body">
+                                    <h3 class="fs-4 fw-bold mb-3 text-primary-dark">2. Route Assignment</h3>
+                                    <p class="mb-4 text-dark small">Goal: Build the most profitable route.</p>
+                                    <ul class="list-group list-group-flush small text-muted">
+                                        <li class="list-group-item bg-transparent px-0">Drag-and-Drop tickets.</li>
+                                        <li class="list-group-item bg-transparent px-0">Driver mobile updates.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card h-100 shadow-sm border-top border-5 border-primary p-3">
+                                <div class="card-body">
+                                    <h3 class="fs-4 fw-bold mb-3 text-primary-dark">3. Financial Sync</h3>
+                                    <p class="mb-4 text-dark small">Goal: Ensure every job is billed.</p>
+                                    <ul class="list-group list-group-flush small text-muted">
+                                        <li class="list-group-item bg-transparent px-0">Auto-calculate overages.</li>
+                                        <li class="list-group-item bg-transparent px-0">Batch-send to QuickBooks.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="text-center mt-5">
+                         <a href="#roi-calculator" onclick="showPage('roi-calculator')" class="btn btn-outline-primary btn-lg px-4 rounded-4">Calculate Your ROI &rarr;</a>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- About Us Section -->
+            <section class="py-5 bg-white shadow-sm section-padding">
+                <div class="container pt-5 pb-5">
+                    <h2 class="text-center fw-bolder mb-2 text-primary-dark">About SISCOTEK</h2>
+                    <p class="text-center lead text-muted mb-5" style="max-width: 800px; margin: auto;">Empowering roll-off companies to transition from fragmented, paper-based processes to a unified, digital command center.</p>
+
+                    <div class="row align-items-center">
+                        <div class="col-md-6 order-md-2">
+                            <div class="bg-light p-4 rounded-3 shadow-sm" style="height: 300px; display: flex; align-items: center; justify-content: center;">
+                                <p class="text-muted text-center fs-5">Team/Mission Image Placeholder</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6 order-md-1 mt-4 mt-md-0">
+                            <h3 class="fs-3 fw-bold mb-3 text-dark">Our Mission: Control & Profitability</h3>
+                            <p class="text-muted">We understand that in the roll-off industry, time is capital. Our mission is to provide an intuitive system that gives owners and dispatchers <b>real-time transparency</b> and the automation tools needed to maximize profitability.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- NEW: Home Page Demo Request Form -->
+            <section class="py-6 py-md-5 bg-primary-dark section-padding">
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-8 col-xl-7">
+                            <div class="bg-white p-4 p-md-5 rounded-4 shadow-lg text-center">
+                                <span class="badge bg-primary-dark text-white mb-3 px-3 py-2 rounded-pill">GET STARTED</span>
+                                <h2 class="fs-2 fw-bold text-primary-dark mb-3">Ready to Optimize Your Fleet?</h2>
+                                <p class="text-muted mb-4">Schedule a personalized demo to see how CTS can eliminate billing errors and reduce deadhead miles.</p>
+                                
+                                <form onsubmit="handleDemoSubmit(event)" class="text-start">
+                                    <div class="row g-3">
+                                        <div class="col-md-6">
+                                            <label class="form-label small fw-bold text-secondary">Full Name</label>
+                                            <input type="text" class="form-control bg-light border-0 p-3 rounded-3" placeholder="John Doe" required>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label class="form-label small fw-bold text-secondary">Work Email</label>
+                                            <input type="email" class="form-control bg-light border-0 p-3 rounded-3" placeholder="john@company.com" required>
+                                        </div>
+                                        <div class="col-12">
+                                            <label class="form-label small fw-bold text-secondary">Company Name</label>
+                                            <input type="text" class="form-control bg-light border-0 p-3 rounded-3" placeholder="Your Hauling Co." required>
+                                        </div>
+                                        <div class="col-12">
+                                            <button type="submit" class="btn cta-gradient w-100 p-3 fw-bold rounded-3 text-white shadow-sm mt-2">
+                                                Request My Demo
+                                            </button>
+                                        </div>
+                                    </div>
+                                </form>
+                                <p class="small text-muted mt-3 mb-0">No credit card required. We respect your inbox.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </section>
+
+        <!-- PAGE: SOLUTION - OPERATIONAL EFFICIENCY -->
+        <section id="solutions-efficiency" class="page-content fade-in-up">
+            <!-- 1. Hero -->
+            <header class="hero-bg section-padding">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <div class="col-lg-6">
+                            <span class="badge bg-primary-dark text-white mb-3 px-3 py-2 rounded-pill">OPERATIONAL EFFICIENCY</span>
+                            <h1 class="display-4 fw-bolder text-dark mb-3">Do More With The <span class="text-primary-dark">Same Fleet</span></h1>
+                            <p class="lead text-muted mb-4">Eliminate deadhead miles, reduce dispatcher call volume, and increase drops per day.</p>
+                            <a href="#demo" onclick="showPage('demo')" class="btn cta-gradient btn-lg px-4 rounded-4 shadow-sm">Optimize My Fleet</a>
+                        </div>
+                        <div class="col-lg-6 mt-5 mt-lg-0">
+                            <div class="bg-white p-5 rounded-4 shadow-lg border border-light d-flex align-items-center justify-content-center" style="height: 350px;">
+                                <p class="text-muted h5">Interactive Map & Route Optimization Mockup</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+            <!-- 2. Problems -->
+            <section class="py-5 bg-white">
+                <div class="container pt-4">
+                    <h2 class="text-center fw-bold text-dark mb-5">Why Efficiency Matters</h2>
+                    <div class="row g-4">
+                        <div class="col-md-4">
+                            <div class="p-4 h-100 border-start border-5 border-danger bg-light rounded-end shadow-sm-hover">
+                                <h3 class="h5 fw-bold text-danger mb-3">Deadhead Miles</h3>
+                                <p class="text-muted mb-0">Trucks driving empty or taking inefficient routes burn fuel and eat into your profit margin.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="p-4 h-100 border-start border-5 border-warning bg-light rounded-end shadow-sm-hover">
+                                <h3 class="h5 fw-bold text-warning mb-3">Dispatcher Burnout</h3>
+                                <p class="text-muted mb-0">Constant phone calls between drivers and office staff lead to miscommunication and errors.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="p-4 h-100 border-start border-5 border-primary bg-light rounded-end shadow-sm-hover">
+                                <h3 class="h5 fw-bold text-primary mb-3">Lost Containers</h3>
+                                <p class="text-muted mb-0">Paper tickets get lost. Without digital tracking, containers sit on job sites unbilled.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- 3. Deep Dive -->
+            <section class="section-padding bg-light">
+                <div class="container">
+                    <div class="row align-items-center mb-5">
+                        <div class="col-md-6 order-md-2">
+                            <div class="bg-white p-5 rounded-4 shadow-sm d-flex align-items-center justify-content-center" style="height: 300px;"><p class="text-muted">Dispatch Board UI</p></div>
+                        </div>
+                        <div class="col-md-6 order-md-1 pe-md-5">
+                            <h3 class="fw-bold text-primary-dark">Intelligent Routing</h3>
+                            <p class="text-muted lead">Drag, drop, and done. Assign tickets to the nearest driver instantly.</p>
+                            <ul class="list-unstyled mt-4">
+                                <li class="mb-3">✅ Visual map view of all open tickets.</li>
+                                <li class="mb-3">✅ Smart assignment based on proximity.</li>
+                                <li class="mb-3">✅ Real-time updates to driver tablets.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- 4. CTA -->
+            <section class="bg-primary-dark py-5 text-center text-white">
+                <div class="container">
+                     <h2 class="fw-bold mb-4">Ready to Optimize?</h2>
+                     <a href="#demo" onclick="showPage('demo')" class="btn btn-light text-primary fw-bold btn-lg px-5 rounded-4">Schedule Efficiency Audit</a>
+                </div>
+            </section>
+        </section>
+
+        <!-- PAGE: SOLUTION - FINANCIAL AUTOMATION -->
+        <section id="solutions-financial" class="page-content fade-in-up">
+            <!-- 1. Hero -->
+            <header class="hero-bg section-padding" style="background-color: #fffbeb;">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <div class="col-lg-6">
+                            <span class="badge bg-warning text-dark mb-3 px-3 py-2 rounded-pill">FINANCIAL AUTOMATION</span>
+                            <h1 class="display-4 fw-bolder text-dark mb-3">Stop Leaking Revenue. <span class="text-warning">Start Automating.</span></h1>
+                            <p class="lead text-muted mb-4">From automatic overage calculations to seamless QuickBooks synchronization.</p>
+                            <a href="#demo" onclick="showPage('demo')" class="btn cta-gradient btn-lg px-4 rounded-4 shadow-sm" style="background-image: linear-gradient(to right, #f59e0b, #d97706);">Automate Billing</a>
+                        </div>
+                        <div class="col-lg-6 mt-5 mt-lg-0">
+                            <div class="bg-white p-5 rounded-4 shadow-lg border border-light d-flex align-items-center justify-content-center" style="height: 350px;">
+                                <p class="text-muted h5">Invoice Generation Dashboard</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+            <!-- 2. Problems -->
+            <section class="py-5 bg-white">
+                <div class="container pt-4">
+                    <h2 class="text-center fw-bold text-dark mb-5">The Cost of Manual Billing</h2>
+                    <div class="row g-4">
+                        <div class="col-md-4">
+                            <div class="p-4 h-100 border-start border-5 border-danger bg-light rounded-end shadow-sm-hover">
+                                <h3 class="h5 fw-bold text-danger mb-3">Missed Overages</h3>
+                                <p class="text-muted mb-0">Manually calculating tonnage overages is error-prone. Missing just a few tons per day costs thousands.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="p-4 h-100 border-start border-5 border-secondary bg-light rounded-end shadow-sm-hover">
+                                <h3 class="h5 fw-bold text-secondary mb-3">Double Data Entry</h3>
+                                <p class="text-muted mb-0">Typing ticket data into a spreadsheet and then again into QuickBooks wastes hours.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                             <div class="p-4 h-100 border-start border-5 border-dark bg-light rounded-end shadow-sm-hover">
+                                <h3 class="h5 fw-bold text-dark mb-3">Slow Cash Flow</h3>
+                                <p class="text-muted mb-0">If it takes you a week to get invoices out, you are financing your customers for free.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- 3. Deep Dive -->
+            <section class="section-padding bg-light">
+                <div class="container">
+                    <div class="row align-items-center mb-5">
+                        <div class="col-md-6 order-md-2">
+                            <div class="bg-white p-5 rounded-4 shadow-sm d-flex align-items-center justify-content-center" style="height: 300px;"><p class="text-muted">QuickBooks Sync UI</p></div>
+                        </div>
+                        <div class="col-md-6 order-md-1 pe-md-5">
+                            <h3 class="fw-bold text-primary-dark">Seamless QuickBooks Sync</h3>
+                            <p class="text-muted lead">Field operations and accounting finally speaking the same language.</p>
+                            <ul class="list-unstyled mt-4">
+                                <li class="mb-3">✅ Bi-directional sync for Customers & Invoices.</li>
+                                <li class="mb-3">✅ Eliminate double entry.</li>
+                                <li class="mb-3">✅ Supports QuickBooks Online & Desktop.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+             <!-- 4. CTA -->
+            <section class="bg-primary-dark py-5 text-center text-white">
+                <div class="container">
+                     <h2 class="fw-bold mb-4">Get Paid Faster</h2>
+                     <a href="#demo" onclick="showPage('demo')" class="btn btn-warning text-dark fw-bold btn-lg px-5 rounded-4">See Financial Impact</a>
+                </div>
+            </section>
+        </section>
+
+        <!-- PAGE: SOLUTION - COMPLIANCE -->
+        <section id="solutions-compliance" class="page-content fade-in-up">
+             <!-- 1. Hero -->
+            <header class="hero-bg section-padding" style="background-color: #fef2f2;">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <div class="col-lg-6">
+                            <span class="badge bg-danger text-white mb-3 px-3 py-2 rounded-pill">RISK & COMPLIANCE</span>
+                            <h1 class="display-4 fw-bolder text-dark mb-3">Audit-Proof Your <span class="text-danger">Operations</span></h1>
+                            <p class="lead text-muted mb-4">Proactively track DOT requirements, asset locations, and service logs.</p>
+                            <a href="#demo" onclick="showPage('demo')" class="btn cta-gradient btn-lg px-4 rounded-4 shadow-sm" style="background-image: linear-gradient(to right, #dc3545, #b02a37);">Secure Compliance</a>
+                        </div>
+                        <div class="col-lg-6 mt-5 mt-lg-0">
+                            <div class="bg-white p-5 rounded-4 shadow-lg border border-light d-flex align-items-center justify-content-center" style="height: 350px;">
+                                <p class="text-muted h5">Compliance Alerts Dashboard</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+            <!-- 2. Problems -->
+            <section class="py-5 bg-white">
+                <div class="container pt-4">
+                    <h2 class="text-center fw-bold text-dark mb-5">The Risk of Non-Compliance</h2>
+                    <div class="row g-4">
+                        <div class="col-md-4">
+                            <div class="p-4 h-100 border-start border-5 border-danger bg-light rounded-end shadow-sm-hover">
+                                <h3 class="h5 fw-bold text-danger mb-3">Expensive Fines</h3>
+                                <p class="text-muted mb-0">A single expired DOT permit can result in thousands of dollars in fines.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                             <div class="p-4 h-100 border-start border-5 border-warning bg-light rounded-end shadow-sm-hover">
+                                <h3 class="h5 fw-bold text-warning mb-3">Asset Liability</h3>
+                                <p class="text-muted mb-0">If you don't know exactly where your container is, you are liable for it.</p>
+                            </div>
+                        </div>
+                         <div class="col-md-4">
+                             <div class="p-4 h-100 border-start border-5 border-primary bg-light rounded-end shadow-sm-hover">
+                                <h3 class="h5 fw-bold text-primary mb-3">Billing Disputes</h3>
+                                <p class="text-muted mb-0">Without a digital audit trail, it's your word against the customer's.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- 3. Deep Dive -->
+            <section class="section-padding bg-white">
+                <div class="container">
+                    <div class="row align-items-center mb-5">
+                        <div class="col-md-6 order-md-2">
+                            <div class="bg-light p-5 rounded-4 shadow-sm d-flex align-items-center justify-content-center" style="height: 300px;"><p class="text-muted">DOT Permit Log</p></div>
+                        </div>
+                        <div class="col-md-6 order-md-1 pe-md-5">
+                            <h3 class="fw-bold text-primary-dark">Automated DOT Management</h3>
+                            <p class="text-muted lead">Never get caught with an expired permit again.</p>
+                            <ul class="list-unstyled mt-4">
+                                <li class="mb-3">✅ Track permits by customer & location.</li>
+                                <li class="mb-3">✅ Automated expiration alerts.</li>
+                                <li class="mb-3">✅ Prevent dispatch to invalid locations.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+             <!-- 4. CTA -->
+            <section class="bg-primary-dark py-5 text-center text-white">
+                <div class="container">
+                     <h2 class="fw-bold mb-4">Sleep Better at Night</h2>
+                     <a href="#demo" onclick="showPage('demo')" class="btn btn-danger text-white fw-bold btn-lg px-5 rounded-4">Get Compliant Now</a>
+                </div>
+            </section>
+        </section>
+
+        <!-- PAGE: FEATURES - CONTAINER TRACKING (Expanded) -->
+        <section id="features-container" class="page-content fade-in-up">
+            <!-- 1. Hero -->
+            <header class="section-padding bg-light">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <div class="col-lg-6">
+                            <span class="badge bg-success text-white mb-3 rounded-pill">FEATURE SPOTLIGHT</span>
+                            <h2 class="display-4 fw-bolder text-primary-dark mb-3">Real-Time Container Tracking</h2>
+                            <p class="fs-5 text-secondary mb-4">Stop using spreadsheets. Track every roll-off container and vehicle location instantly via GPS and geo-fencing.</p>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="bg-white border rounded-3 shadow-lg p-5 d-flex align-items-center justify-content-center h-100" style="min-height: 300px;">
+                                <p class="text-secondary fw-bold">Real-Time Asset Map Interface</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+             <!-- 2. Challenge -->
+             <section class="py-5 bg-white">
+                <div class="container">
+                    <div class="row justify-content-center text-center">
+                        <div class="col-md-8">
+                            <h3 class="fw-bold text-dark mb-3">The Inventory Challenge</h3>
+                            <p class="text-muted lead">Relying on driver memory or whiteboards costs you thousands in lost, stolen, or underutilized assets. You need 100% visibility to maximize turnover.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- 3. Deep Dive -->
+            <section class="section-padding bg-light">
+                <div class="container">
+                     <div class="row align-items-center">
+                        <div class="col-md-6">
+                            <h3 class="fs-2 fw-bold text-success mb-4">Module Deep Dive</h3>
+                            <ul class="list-unstyled text-dark fs-6">
+                                <li class="d-flex align-items-start mb-3">
+                                    <svg class="feature-icon text-success me-3" style="width:1.5rem;height:1.5rem" fill="currentColor" viewBox="0 0 16 16"><path d="M.5 3a.5.5 0 0 1 .5-.5h14a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5H1a.5.5 0 0 1-.5-.5V3zm0 4a.5.5 0 0 1 .5-.5h14a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5H1a.5.5 0 0 1-.5-.5V7zm0 4a.5.5 0 0 1 .5-.5h14a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5H1a.5.5 0 0 1-.5-.5v-1z"/></svg>
+                                    <div><b>Real-Time Inventory Control:</b> Track every CONTAINER by status (Available, Active, In-Transit) to improve utilization.</div>
+                                </li>
+                                <li class="d-flex align-items-start mb-3">
+                                    <svg class="feature-icon text-success me-3" style="width:1.5rem;height:1.5rem" fill="currentColor" viewBox="0 0 16 16"><path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2-1A.5.5 0 0 1 12 5v7a.5.5 0 0 1-1 0V5a.5.5 0 0 1 .5-.5z"/></svg>
+                                    <div><b>Proactive Maintenance:</b> Schedule and track all vehicle maintenance to maximize uptime.</div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col-md-6 mt-4 mt-md-0">
+                            <div class="bg-white p-5 rounded-3 shadow-sm d-flex align-items-center justify-content-center" style="height: 300px;">
+                                <p class="text-muted">Inventory List Screenshot</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+             <!-- 4. CTA -->
+            <section class="bg-primary-dark py-5 text-center text-white">
+                <div class="container">
+                     <h2 class="fw-bold mb-4">Track Your Assets Now</h2>
+                     <a href="#demo" onclick="showPage('demo')" class="btn btn-success text-white fw-bold btn-lg px-5 rounded-4">See It Live</a>
+                </div>
+            </section>
+        </section>
+
+        <!-- PAGE: FEATURES - ORDER MANAGEMENT (Expanded) -->
+        <section id="features-order" class="page-content fade-in-up">
+            <!-- 1. Hero -->
+            <header class="section-padding bg-light">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <div class="col-lg-6">
+                            <span class="badge bg-primary text-white mb-3 rounded-pill">FEATURE SPOTLIGHT</span>
+                            <h2 class="display-4 fw-bolder text-primary-dark mb-3">Intelligent Dispatch & Routing</h2>
+                            <p class="fs-5 text-secondary mb-4">Stop juggling emails and sticky notes. Connect sales, dispatch, and drivers in real-time.</p>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="bg-white border rounded-3 shadow-lg p-5 d-flex align-items-center justify-content-center h-100" style="min-height: 300px;">
+                                <p class="text-secondary fw-bold">Dispatch Interface</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+            <!-- 2. Challenge -->
+            <section class="py-5 bg-white">
+                <div class="container">
+                    <div class="row justify-content-center text-center">
+                        <div class="col-md-8">
+                            <h3 class="fw-bold text-dark mb-3">The Dispatching Bottleneck</h3>
+                            <p class="text-muted lead">Manual work orders and inefficient routing waste valuable fuel and driver hours. You need a system that does the thinking for you.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- 3. Deep Dive -->
+            <section class="section-padding bg-light">
+                <div class="container">
+                     <div class="row align-items-center">
+                        <div class="col-md-6">
+                            <h3 class="fs-2 fw-bold text-primary mb-4">Module Deep Dive</h3>
+                             <ul class="list-unstyled text-dark fs-6">
+                                <li class="d-flex align-items-start mb-3">
+                                    <svg class="feature-icon text-primary me-3" style="width:1.5rem;height:1.5rem" fill="currentColor" viewBox="0 0 16 16"><path d="M13 7h8m0 0v8m0-8l-8 8m-3 5h5v2H6a2 2 0 01-2-2v-5h2z"></path></svg>
+                                    <div><b>Automated Work Orders:</b> Automatically generate work orders from sales data, minimizing dispatcher effort.</div>
+                                </li>
+                                <li class="d-flex align-items-start mb-3">
+                                    <svg class="feature-icon text-primary me-3" style="width:1.5rem;height:1.5rem" fill="currentColor" viewBox="0 0 16 16"><path d="M9 19V6l12-3v16l-12 3zM3 17l12 3V4L3 7v10z"></path></svg>
+                                    <div><b>Dynamic Routing:</b> Intelligently group nearby tasks to cut mileage by up to 15%.</div>
+                                </li>
+                            </ul>
+                        </div>
+                         <div class="col-md-6 mt-4 mt-md-0">
+                            <div class="bg-white p-5 rounded-3 shadow-sm d-flex align-items-center justify-content-center" style="height: 300px;">
+                                <p class="text-muted">Route Optimization Map</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- 4. CTA -->
+             <section class="bg-primary-dark py-5 text-center text-white">
+                <div class="container">
+                     <h2 class="fw-bold mb-4">Optimize Your Routes</h2>
+                     <a href="#demo" onclick="showPage('demo')" class="btn btn-light text-primary fw-bold btn-lg px-5 rounded-4">Start Saving Fuel</a>
+                </div>
+            </section>
+        </section>
+
+        <!-- PAGE: FEATURES - INVOICING (Expanded) -->
+        <section id="features-invoice" class="page-content fade-in-up">
+            <!-- 1. Hero -->
+            <header class="section-padding bg-light">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <div class="col-lg-6">
+                            <span class="badge bg-warning text-dark mb-3 rounded-pill">FEATURE SPOTLIGHT</span>
+                            <h2 class="display-4 fw-bolder text-primary-dark mb-3">Zero Billing Errors</h2>
+                            <p class="fs-5 text-secondary mb-4">Manual billing is slow and error-prone. Generate perfect invoices instantly and sync with QuickBooks.</p>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="bg-white border rounded-3 shadow-lg p-5 d-flex align-items-center justify-content-center h-100" style="min-height: 300px;">
+                                <p class="text-secondary fw-bold">Billing Dashboard</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+             <!-- 2. Challenge -->
+            <section class="py-5 bg-white">
+                <div class="container">
+                    <div class="row justify-content-center text-center">
+                        <div class="col-md-8">
+                            <h3 class="fw-bold text-dark mb-3">Revenue Leakage</h3>
+                            <p class="text-muted lead">Missing a single overage charge or losing a paper ticket means working for free. Stop the leaks with automation.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+             <!-- 3. Deep Dive -->
+            <section class="section-padding bg-light">
+                <div class="container">
+                     <div class="row align-items-center">
+                        <div class="col-md-6">
+                            <h3 class="fs-2 fw-bold text-warning mb-4">Module Deep Dive</h3>
+                             <ul class="list-unstyled text-dark fs-6">
+                                <li class="d-flex align-items-start mb-3">
+                                    <svg class="feature-icon text-warning me-3" style="width:1.5rem;height:1.5rem" fill="currentColor" viewBox="0 0 16 16"><path d="M12 6.253v13m0-13C10.832 5.477 9.206 5 7.5 5S4.168 5.477 3 6.253M12 6.253C13.168 5.477 14.794 5 16.5 5s3.332.477 4.5 1.253m-13 13C4.168 18.523 2.542 19 3 19s3.332-.477 4.5-1.253m13 13C14.832 18.523 16.458 19 16.5 19s3.332-.477 4.5-1.253"></path></svg>
+                                    <div><b>Accelerated Cash Flow:</b> Send invoices the moment service is complete, shortening your cash collection cycle.</div>
+                                </li>
+                                <li class="d-flex align-items-start mb-3">
+                                    <svg class="feature-icon text-warning me-3" style="width:1.5rem;height:1.5rem" fill="currentColor" viewBox="0 0 16 16"><path d="M12 8c-2.32 0-4 1.255-4 3s1.68 3 4 3 4-1.255 4-3-1.68-3-4-3zM12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"></path></svg>
+                                    <div><b>Zero Errors:</b> Invoices are generated from immutable service data, not manual data entry.</div>
+                                </li>
+                            </ul>
+                        </div>
+                         <div class="col-md-6 mt-4 mt-md-0">
+                            <div class="bg-white p-5 rounded-3 shadow-sm d-flex align-items-center justify-content-center" style="height: 300px;">
+                                <p class="text-muted">Invoicing Engine</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- 4. CTA -->
+             <section class="bg-primary-dark py-5 text-center text-white">
+                <div class="container">
+                     <h2 class="fw-bold mb-4">Automate Your Billing</h2>
+                     <a href="#demo" onclick="showPage('demo')" class="btn btn-warning text-dark fw-bold btn-lg px-5 rounded-4">Stop Leakage</a>
+                </div>
+            </section>
+        </section>
+
+        <!-- PAGE: FEATURES - AUDIT & COMPLIANCE -->
+        <section id="features-audit" class="page-content section-padding fade-in-up">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-6">
+                        <span class="badge bg-danger text-white mb-3 rounded-pill">FEATURE SPOTLIGHT</span>
+                        <h2 class="display-5 fw-bolder text-primary-dark mb-3">Digital Proof of Service.</h2>
+                        <p class="fs-5 text-secondary mb-4">Eliminate disputes with irrefutable geo-stamped proof of every drop and pickup.</p>
+                        <ul class="list-unstyled space-y-3">
+                            <li class="d-flex align-items-start mb-3"><span class="text-danger me-2">✓</span> Geo-Stamped Logs</li>
+                            <li class="d-flex align-items-start"><span class="text-danger me-2">✓</span> Regulatory Compliance Records</li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="bg-light border rounded-3 shadow-lg p-5 d-flex align-items-center justify-content-center h-100" style="min-height: 300px;">
+                            <p class="text-secondary fw-bold">Audit Log Interface</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PAGE: ABOUT -->
+        <section id="about" class="page-content section-padding fade-in-up">
+            <div class="container">
+                <div class="row g-5 align-items-center">
+                    <div class="col-lg-6">
+                        <h2 class="display-5 fw-bolder text-primary-dark mb-4">Driven by Efficiency.</h2>
+                        <p class="fs-5 text-secondary mb-4">CTS was founded by veterans of the hauling industry. We don't just provide software; we provide a system that protects your bottom line.</p>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="bg-primary-dark text-white p-5 rounded-3 shadow-lg text-center">
+                            <h3>Our Mission</h3>
+                            <p>To eliminate operational chaos and deliver quantifiable ROI for asset-heavy fleets.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PAGE: ROI CALCULATOR -->
+        <section id="roi-calculator" class="page-content section-padding fade-in-up">
+            <div class="container">
+                <div class="card shadow-lg mx-auto p-4 p-md-5 border-top border-5 border-warning" style="max-width: 900px;">
+                    <h2 class="text-center mb-4">Calculate Your ROI</h2>
+                    <div class="row g-3">
+                        <div class="col-md-4">
+                            <label># of Vehicles</label>
+                            <input type="number" id="vehicles" class="form-control" value="10">
+                        </div>
+                        <div class="col-md-4">
+                            <label>Manual Admin Hours/Week</label>
+                            <input type="number" id="manual_hours" class="form-control" value="15">
+                        </div>
+                        <div class="col-md-4">
+                            <label>Monthly Demurrage Fees ($)</label>
+                            <input type="number" id="demurrage_fees" class="form-control" value="2500">
+                        </div>
+                        <div class="col-12 text-center mt-4">
+                            <button id="calculate-btn" class="btn btn-primary btn-lg rounded-pill px-5">Calculate Savings</button>
+                        </div>
+                    </div>
+                    <div id="calculator-output" class="d-none mt-5 p-4 bg-light rounded-3 text-center">
+                        <h3>Total Estimated Annual Savings</h3>
+                        <p class="display-4 text-success fw-bold" id="savings-total">$0</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PAGE: DEMO REQUEST -->
+        <section id="demo" class="page-content section-padding bg-primary-dark fade-in-up">
+            <div class="container">
+                <div class="card shadow-lg mx-auto p-4 p-md-5 rounded-4 border-0" style="max-width: 600px;">
+                    <div class="text-center mb-4">
+                        <h2 class="fw-bold text-primary-dark">Book Your Demo</h2>
+                        <p class="text-muted">See CTS in action tailored to your fleet.</p>
+                    </div>
+                    <form onsubmit="handleDemoSubmit(event)">
+                        <div class="mb-3">
+                            <input type="text" class="form-control p-3" placeholder="Full Name" required>
+                        </div>
+                        <div class="mb-3">
+                            <input type="email" class="form-control p-3" placeholder="Work Email" required>
+                        </div>
+                        <div class="mb-3">
+                            <input type="text" class="form-control p-3" placeholder="Company Name" required>
+                        </div>
+                        <button type="submit" class="btn cta-gradient w-100 p-3 fw-bold rounded-3">Confirm Request</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Global Footer -->
+    <footer class="bg-dark text-white pt-5 pb-3">
+        <div class="container">
+            <div class="row g-4">
+                <!-- Column 1: Brand -->
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="text-primary fw-bold mb-3">CTS</h5>
+                    <p class="small text-white-50 mb-3">The Command Center for Roll-Off Operations. Maximize ROI with real-time asset intelligence.</p>
+                    <div class="d-flex gap-3">
+                        <!-- Social placeholders -->
+                        <a href="#" class="text-white-50 hover-white text-decoration-none">Twitter</a>
+                        <a href="#" class="text-white-50 hover-white text-decoration-none">LinkedIn</a>
+                    </div>
+                </div>
+
+                <!-- Column 2: Solutions -->
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="text-white fw-bold mb-3">Solutions</h5>
+                    <ul class="list-unstyled small text-white-50">
+                        <li class="mb-2"><a href="#solutions-efficiency" onclick="showPage('solutions-efficiency')" class="text-white-50 text-decoration-none">Operational Efficiency</a></li>
+                        <li class="mb-2"><a href="#solutions-financial" onclick="showPage('solutions-financial')" class="text-white-50 text-decoration-none">Financial Automation</a></li>
+                        <li class="mb-2"><a href="#solutions-compliance" onclick="showPage('solutions-compliance')" class="text-white-50 text-decoration-none">Risk & Compliance</a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 3: Company & Resources -->
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="text-white fw-bold mb-3">Resources</h5>
+                    <ul class="list-unstyled small text-white-50">
+                        <li class="mb-2"><a href="#about" onclick="showPage('about')" class="text-white-50 text-decoration-none">About Us</a></li>
+                        <li class="mb-2"><a href="#roi-calculator" onclick="showPage('roi-calculator')" class="text-white-50 text-decoration-none">ROI Calculator</a></li>
+                        <li class="mb-2"><a href="#reporting" onclick="showPage('reporting')" class="text-white-50 text-decoration-none">Reporting Dashboard</a></li>
+                        <li class="mb-2"><a href="#demo" onclick="showPage('demo')" class="text-white-50 text-decoration-none">Book a Demo</a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 4: Legal & Contact -->
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="text-white fw-bold mb-3">Legal</h5>
+                    <ul class="list-unstyled small text-white-50">
+                        <li class="mb-2"><a href="/privacy.md" class="text-white-50 text-decoration-none">Privacy Policy</a></li>
+                        <li class="mb-2"><a href="/terms_of_use.md" class="text-white-50 text-decoration-none">Terms of Use</a></li>
+                    </ul>
+                    <div class="mt-4">
+                        <button onclick="showPage('demo')" class="btn btn-primary btn-sm px-4 rounded-pill">Contact Sales</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="pt-4 mt-5 border-top border-secondary text-center small text-white-50">
+                &copy; 2024 SISCOTEK. All Rights Reserved.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Logic -->
+    <script>
+        const pageIds = [
+            'home', 'solutions-efficiency', 'solutions-financial', 'solutions-compliance',
+            'features-container', 'features-order', 'features-invoice', 'features-audit',
+            'integrations-quickbooks', 'reporting', 'about', 'roi-calculator', 'demo'
+        ];
+
+        function showPage(pageId) {
+            // Hide all pages
+            pageIds.forEach(id => {
+                const el = document.getElementById(id);
+                if(el) el.style.display = 'none';
+            });
+            
+            // Show requested page
+            const target = document.getElementById(pageId);
+            if(target) {
+                target.style.display = 'block';
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            }
+
+            // Update URL hash
+            history.pushState(null, '', `#${pageId}`);
+
+            // Close mobile menu if open
+            const nav = document.getElementById('navbarNav');
+            const bsCollapse = bootstrap.Collapse.getInstance(nav);
+            if (bsCollapse && nav.classList.contains('show')) {
+                bsCollapse.hide();
+            }
+        }
+
+        // Handle Back/Forward browser buttons
+        window.onpopstate = () => {
+            const hash = window.location.hash.substring(1);
+            if(pageIds.includes(hash)) showPage(hash);
+            else showPage('home');
+        };
+
+        // Initial Load
+        document.addEventListener('DOMContentLoaded', () => {
+            const hash = window.location.hash.substring(1);
+            if(pageIds.includes(hash)) showPage(hash);
+            else showPage('home');
+        });
+
+        // ROI Logic
+        document.getElementById('calculate-btn')?.addEventListener('click', () => {
+            const vehicles = parseFloat(document.getElementById('vehicles').value) || 0;
+            const hours = parseFloat(document.getElementById('manual_hours').value) || 0;
+            const fees = parseFloat(document.getElementById('demurrage_fees').value) || 0;
+            
+            // Simple Logic
+            const savings = (hours * 30 * 52) + (fees * 12 * 0.8); // Assuming $30/hr labor & 80% fee reduction
+            
+            const output = document.getElementById('calculator-output');
+            document.getElementById('savings-total').innerText = `$${Math.round(savings).toLocaleString()}`;
+            output.classList.remove('d-none');
+            output.scrollIntoView({behavior: 'smooth'});
+        });
+
+        // Demo Submit
+        function handleDemoSubmit(e) {
+            e.preventDefault();
+            alert("Thank you! Your demo request has been received.");
+        }
+    </script>
+</body>
+</html>
