@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Financial Automation | CTS Solutions</title>
+    
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Custom Styles -->
+    <style>
+        body { font-family: 'Inter', sans-serif; background-color: #f8f9fa; }
+        html { scroll-behavior: smooth; }
+        .bg-primary-dark { background-color: #0b1a3d !important; }
+        .text-primary-dark { color: #1d4ed8 !important; }
+        .shadow-sm-hover:hover { box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important; transform: translateY(-3px); transition: all 0.3s ease; }
+        .cta-gradient { background-image: linear-gradient(to right, #f59e0b, #d97706); border: none; } /* Gold gradient for finance */
+        .feature-icon { width: 3rem; height: 3rem; }
+        .section-padding { padding-top: 5rem; padding-bottom: 5rem; }
+        .hero-bg { background-color: #fffbeb; } /* Light yellow/gold tint */
+    </style>
+</head>
+<body data-bs-spy="scroll" data-bs-target="#main-nav" data-bs-offset="50">
+
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top shadow-sm" id="main-nav">
+        <div class="container-fluid">
+            <a class="navbar-brand d-flex align-items-center fw-bold text-primary-dark" href="index.html">
+                <svg class="feature-icon me-2 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24" style="width: 24px; height: 24px;"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10m0-10l-8-4m8 4l8-4"></path></svg>
+                CTS
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item"><a class="nav-link text-dark" href="index.html">Home</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle text-primary fw-bold" href="#" role="button" data-bs-toggle="dropdown">Solutions</a>
+                        <ul class="dropdown-menu shadow-lg">
+                            <li><a class="dropdown-item" href="solutions-efficiency.html">🚀 Operational Efficiency</a></li>
+                            <li><a class="dropdown-item active" href="solutions-financial.html">💰 Financial Automation</a></li>
+                            <li><a class="dropdown-item" href="solutions-compliance.html">✅ Risk & Compliance</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a class="nav-link text-dark" href="index.html#features-hub">Features</a></li>
+                    <li class="nav-item ms-lg-3">
+                        <a href="index.html#demo-request" class="btn btn-primary btn-sm px-3 rounded-3 shadow-sm">Request Demo</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Solution Hero -->
+    <header class="hero-bg pt-5 pb-5 pt-md-6 pb-md-7 section-padding">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <span class="badge bg-warning text-dark mb-3 px-3 py-2 rounded-pill">FINANCIAL AUTOMATION</span>
+                    <h1 class="display-4 fw-bolder text-dark mb-3">
+                        Stop Leaking Revenue. <span class="text-warning">Start Automating.</span>
+                    </h1>
+                    <p class="lead text-muted mb-4">
+                        From automatic overage calculations to seamless QuickBooks synchronization. Cut your billing time by 80% and ensure you get paid for every ton.
+                    </p>
+                    <div class="d-flex gap-3">
+                        <a href="index.html#demo-request" class="btn cta-gradient text-white btn-lg px-4 rounded-4 shadow-sm">Automate My Billing</a>
+                    </div>
+                </div>
+                <div class="col-lg-6 mt-5 mt-lg-0">
+                    <div class="bg-white p-5 rounded-4 shadow-lg border border-light d-flex align-items-center justify-content-center" style="height: 350px;">
+                        <p class="text-muted h5">Invoice Generation & QB Sync Dashboard</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- The Problems We Solve -->
+    <section class="py-5 bg-white">
+        <div class="container pt-4">
+            <h2 class="text-center fw-bold text-dark mb-5">The Cost of Manual Billing</h2>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="p-4 h-100 border-start border-5 border-danger bg-light rounded-end shadow-sm-hover">
+                        <h3 class="h5 fw-bold text-danger mb-3">Missed Overages</h3>
+                        <p class="text-muted mb-0">Manually calculating tonnage overages is error-prone. Missing just a few tons per day costs thousands per month.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="p-4 h-100 border-start border-5 border-secondary bg-light rounded-end shadow-sm-hover">
+                        <h3 class="h5 fw-bold text-secondary mb-3">Double Data Entry</h3>
+                        <p class="text-muted mb-0">Typing ticket data into a spreadsheet and then again into QuickBooks wastes hours and creates transcription errors.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="p-4 h-100 border-start border-5 border-dark bg-light rounded-end shadow-sm-hover">
+                        <h3 class="h5 fw-bold text-dark mb-3">Slow Cash Flow</h3>
+                        <p class="text-muted mb-0">If it takes you a week to get invoices out after service, you are financing your customers for free.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Feature Deep Dives -->
+    <section class="section-padding bg-light">
+        <div class="container">
+            
+            <!-- Feature Block 1 -->
+            <div class="row align-items-center mb-5">
+                <div class="col-md-6 order-md-2">
+                    <div class="bg-white p-5 rounded-4 shadow-sm d-flex align-items-center justify-content-center" style="height: 300px;">
+                         <p class="text-muted">QuickBooks Integration Settings UI</p>
+                    </div>
+                </div>
+                <div class="col-md-6 order-md-1 pe-md-5">
+                    <div class="feature-icon fs-1 mb-3">🔄</div>
+                    <h3 class="fw-bold text-primary-dark">Seamless QuickBooks Sync</h3>
+                    <p class="text-muted lead">Your field operations and your accounting software, finally speaking the same language.</p>
+                    <ul class="list-unstyled mt-4">
+                        <li class="d-flex align-items-start mb-3">
+                            <span class="text-warning fw-bold me-2">✓</span>
+                            <span>Bi-directional sync for Customers, Invoices, and Payments.</span>
+                        </li>
+                        <li class="d-flex align-items-start mb-3">
+                            <span class="text-warning fw-bold me-2">✓</span>
+                            <span>Eliminate double entry: Close a ticket, generate an invoice instantly.</span>
+                        </li>
+                        <li class="d-flex align-items-start mb-3">
+                            <span class="text-warning fw-bold me-2">✓</span>
+                            <span>Supports QuickBooks Online and Desktop versions.</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Feature Block 2 -->
+            <div class="row align-items-center mt-5 pt-4">
+                <div class="col-md-6">
+                    <div class="bg-white p-5 rounded-4 shadow-sm d-flex align-items-center justify-content-center" style="height: 300px;">
+                         <p class="text-muted">Automated Pricing Engine Visual</p>
+                    </div>
+                </div>
+                <div class="col-md-6 ps-md-5 mt-4 mt-md-0">
+                    <div class="feature-icon fs-1 mb-3">💲</div>
+                    <h3 class="fw-bold text-primary-dark">Automated Charge Calculation</h3>
+                    <p class="text-muted lead">Never guess the price again. Systematize your pricing structures.</p>
+                    <ul class="list-unstyled mt-4">
+                        <li class="d-flex align-items-start mb-3">
+                            <span class="text-warning fw-bold me-2">✓</span>
+                            <span>Auto-calculate rental days and demurrage fees.</span>
+                        </li>
+                        <li class="d-flex align-items-start mb-3">
+                            <span class="text-warning fw-bold me-2">✓</span>
+                            <span>Zone-based pricing and specific customer rate sheets.</span>
+                        </li>
+                        <li class="d-flex align-items-start mb-3">
+                            <span class="text-warning fw-bold me-2">✓</span>
+                            <span>Manage fuel surcharges automatically.</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="bg-primary-dark py-5 text-center">
+        <div class="container">
+            <h2 class="text-white fw-bold mb-4">Stop Leaving Money on the Table</h2>
+            <p class="text-white-50 mb-4 lead">Our users report an average of 15% revenue increase just by capturing missed charges.</p>
+            <a href="index.html#demo-request" class="btn btn-warning text-dark fw-bold btn-lg px-5 rounded-4 shadow">See The Financial Impact</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-4">
+        <div class="container text-center">
+            <p class="mb-2 fw-semibold">CTS: The Command Center for Roll-Off Operations</p>
+            <span class="d-block w-100 w-sm-auto small text-muted">&copy; 2024 SISCOTEK. All rights reserved.</span>
+        </div>
+    </footer>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
